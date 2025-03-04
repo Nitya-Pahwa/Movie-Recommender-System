@@ -1,0 +1,97 @@
+Movie Recommender System Project
+
+Overview
+This project involves building a predictive model that recommends movies to users based on their preferences and past interactions. It analyzes user-movie interactions and provides personalized recommendations.
+
+Key Objectives
+
+- Recommend movies to users based on their viewing history and preferences.
+- Understand the relationship between user behavior and movie recommendations.
+- Provide an efficient and user-friendly movie recommendation solution.
+
+Dataset
+
+- Source: Movie dataset (from Kaggle).
+- Features:
+    The dataset contains 2 csv files -> movie and credits
+    Movie Dataset Features:
+       - budget: the total budget of the movie.
+       - genres: what was the genres of the movie.
+       - homepage: From where can we find that movie.
+       - id: The ID of the movie.
+       - keywords: the keywords that are contained in the movie like action etc..
+       - original_language: Tell in which language the movie was originally created.
+       - original_title: The original title of the movie (it can be in any language)
+       - overview: the overview  of the movie.
+       - popularity: How much popularity the movie has achieved.
+       - production_companies: What are the production companies involved in the movie. 
+       - production_countries:  The country in which the movie is produced. 
+       - release_date: The release date of the movie.          
+       - revenue:                
+       - runtime:               
+       - spoken_languages: The languages spoken in the movie.       
+       - status:               
+       - tagline: The tagline of the movie.                
+       - title: The name of the movie.               
+       - vote_average:          
+       - vote_count:         
+  
+    Credit Dataset Features:
+       - movie_id: The ID of the movie.
+       - title: The name of the movie.
+       - cast: The actors , actresses etc.. involved in the movie.
+       - crew: The crew like the director etc.. involved in the movie.
+
+Methodology
+
+1. Data Cleaning:
+   - Load the dataset and understand its structure.
+   - Check for missing values and handle them appropriately.
+   - Remove duplicate records if any.
+   - merge the 2 dataset and make a new dataset.
+   - Removing columns that are not useful for our content based analysis. 
+   
+2. Data Preprocessing:
+   - Convert all the columns into appropriate form and then converting it to strings.
+   - Removing spaces in between names in order to avoid confusion.
+
+3. Feature Engineering:
+   - Making new features out of the given dataset: ID, title , tag column
+       - tag: this column is built using merging the columns like genres, overview, top 3 cast , director, keywords
+
+4. Text Preprocessing:
+   - Convert tag column to lowercase.
+   - Applying Stemming to the tag column.
+   - Removing stopwords 
+   - Applying Text Vectorization on tag column- Bag of Words: Merging all the words of tag and extracting top 5000 words from it.
+
+5. Building the Recommender System:
+   - Content-Based Filtering:
+     - Compute cosine_similarity between movies 
+   - Making a function that takes a movie and input and extract top 5 similar movies.
+
+Libraries and Tools Used
+
+- Python: Programming language for implementation.
+- Pandas: For data manipulation and analysis.
+- NumPy: For numerical computations.
+- Scikit-learn: For machine learning modeling and evaluation.
+- ast: For converting columns into appropriate type in order to merge them.
+- NLTK: For natural language processing.
+- Jupyter Notebook: For interactive coding and documentation.
+
+Results
+
+- Identified key patterns in user preferences through content based analysis and gives top 5 similar movies.
+
+Prerequisites
+
+- Python
+- Required Libraries:
+  - pandas
+  - numpy
+  - sklearn
+  - nltk
+  - ast
+  - jupyter notebook
+
